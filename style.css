@@ -1,1 +1,49 @@
-/* Empty file for template. Remember to edit only this file and not the HTML file */
+body {
+    background-image: url(fuji.jpg);
+    background-position: center;
+    background-attachment: fixed;
+}
+
+* {
+    font-family: "Mono";
+    font-size: 16px;
+    color: white;
+}
+
+a, a > abbr{
+    color: rgb(255, 215, 250);
+}
+
+a:hover, a > abbr:hover {
+    color: rgb(255, 166, 243);
+}
+
+
+.intro {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
