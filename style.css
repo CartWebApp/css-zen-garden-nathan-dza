@@ -1,4 +1,4 @@
-body {
+:root {
     background-image: url(fuji.jpg);
     background-position: center;
     background-attachment: fixed;
@@ -18,13 +18,17 @@ a:hover, a > abbr:hover {
     color: rgb(255, 166, 243);
 }
 
-
 .intro {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    backdrop-filter: blur(10px);
+    border: 5px;
+    border-color: rgb(255, 166, 243);
     border-radius:20px;
+}
+
+h1::first-letter{
+font-size: 60px;
 }
 
 h1 {
@@ -32,6 +36,9 @@ h1 {
     margin-bottom: 0px;
 }
 
+.main.explanation {
+    backdrop-filter: blur(10px);
+}
 
 
 
