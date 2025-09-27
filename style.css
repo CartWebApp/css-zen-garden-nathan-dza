@@ -48,23 +48,14 @@ color: rgb(180, 43, 226);
 }
 
 [role*="navigation"] {
+    display: inline-block;
     border-style: double;
     border-width: 2px;
     border-radius: 15px;
-
     align-items: center;
+    padding-right: 25px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+div p{
+    font-family: sans-serif
+}
