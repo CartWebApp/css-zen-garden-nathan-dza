@@ -1,17 +1,45 @@
 :root {
+    margin: 5em;
     background-image: url(fuji.jpg);
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; 
+}
+
+.zen-wrapper{
+   
+    display: grid;
+    gap: 20px;
+    grid-template: repeat(5,auto)/1fr 1fr;
+    grid-template-areas: 'intro intro'
+                         'div div'
+                         'aside aside';
+}
+
+section[class^="intro"] {
+    grid-area: intro;
+}
+
+div[class="main supporting"]{
+    grid-area: div;
 }
 
 * {
     font-family: "Mono";
-    font-size: 16px;
+    font-size: 19px;
     color: white;
+}
+
+[class|="explan"] {
+    grid-area: about;
+}
+
+[class|="part"] {
+    grid-area: part;
 }
 
 
 #zen-intro {
+    padding: 2em;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -20,6 +48,8 @@
     border-width: 3px;
     border-color: rgb(255, 215, 250);
 }
+
+
 
 abbr:focus{
     font-size: 20px;
@@ -50,7 +80,7 @@ color: rgb(180, 43, 226);
 }
 
 div p{
-    font-family: sans-serif
+    font-family: sans-serif;
 }
 
 
@@ -117,9 +147,9 @@ h2:only-child{
     size: 20px;
 }
 
-
-
-
+[lang|="en"]{
+    font-size: 18px;
+}
 
 
 
