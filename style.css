@@ -10,15 +10,8 @@
     color: white;
 }
 
-a, a > abbr{
-    color: rgb(255, 215, 250);
-}
 
-a:hover, a > abbr:hover {
-    color: rgb(255, 166, 243);
-}
-
-.intro {
+#zen-intro {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -26,12 +19,14 @@ a:hover, a > abbr:hover {
     border-radius: 15px;
     border-width: 3px;
     border-color: rgb(255, 215, 250);
-    backdrop-filter: blur(5px)
-
 }
 
-h1::first-letter{
-font-size: 60px;
+abbr:focus{
+    font-size: 20px;
+}
+
+h2::first-letter, h3::first-letter{
+font-size: 30px;
 }
 
 h1 {
@@ -39,8 +34,8 @@ h1 {
     margin-bottom: 0px;
 }
 
-.main.explanation {
-    backdrop-filter: blur(10px);
+p.intro {
+    font-size: 20px;
 }
 
 a:visited{
@@ -48,14 +43,83 @@ color: rgb(180, 43, 226);
 }
 
 [role*="navigation"] {
-    display: inline-block;
-    border-style: double;
-    border-width: 2px;
-    border-radius: 15px;
-    align-items: center;
-    padding-right: 25px;
+    list-style-type: none;
+    display: inline;
+    text-align: center;
+
 }
 
 div p{
     font-family: sans-serif
 }
+
+
+p>abbr{
+    color: rgb(208, 112, 199);
+}
+
+h1::before{
+    content: "🌸";
+}
+h1::after{
+    content: "🌸";
+}
+
+.intro::first-line{
+    color: #ffecbb;
+    text-shadow: -1px -1px #ffffff;
+}
+
+h3:first-of-type, h2:first-of-type{
+    font-style: italic;
+}
+
+::selection{
+    background-color: rgba(255, 158, 249, 0.642);
+    color: rgb(0, 0, 0);
+}
+
+:not(p){
+    color: #ffecbb;
+}
+
+a, a > abbr{
+    color: rgb(255, 215, 250);
+}
+
+a:hover, a abbr:hover {
+    color: rgb(255, 166, 243);
+}
+
+li{
+    list-style-type: none;
+}
+
+a:active{
+    background-color: #ffecbb;
+}
+
+
+h3:only-of-type{
+    color: ;
+    text-shadow: -1px -1px #ffffff;
+}
+
+h2:only-child{
+    size: 30px;
+}
+
+{
+    color: rgb(138, 138, 199);
+}
+
+[class $="mi"]{
+    size: 20px;
+}
+
+
+
+
+
+
+
