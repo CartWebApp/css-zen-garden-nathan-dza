@@ -5,7 +5,7 @@
     background-attachment: fixed; 
 }
 
-.zen-wrapper{
+.page-wrapper{
    
     display: grid;
     gap: 20px;
@@ -21,6 +21,10 @@ section[class^="intro"] {
 
 div[class="main supporting"]{
     grid-area: div;
+    display: grid;
+    grid-template-areas: "ex part"
+                         "ben ben"
+                         "req req";
 }
 
 * {
@@ -30,11 +34,12 @@ div[class="main supporting"]{
 }
 
 [class|="explan"] {
-    grid-area: about;
+    grid-area: ex;
 }
 
-[class|="part"] {
+[class~="part"] {
     grid-area: part;
+
 }
 
 
