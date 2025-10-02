@@ -6,7 +6,7 @@
 }
 
 [id]{
-    text-align: center;
+    text-align: left;
 }
 
 .page-wrapper{
@@ -26,6 +26,7 @@ section[class^="intro"] {
 div[class="main supporting"]{
     grid-area: div;
     display: grid;
+    gap: 2em;
     grid-template-areas: "ex part"
                          "ben ben"
                          "req req";
@@ -58,12 +59,13 @@ div[class="main supporting"]{
 #zen-intro {
     padding: 2em;
     text-align: center;
-    margin-top: 20px;
+    margin-top: -75px;
     margin-bottom: 20px;
     border-style: double;
     border-radius: 15px;
     border-width: 3px;
     border-color: rgb(255, 215, 250);
+    backdrop-filter: blur(5px);
 }
 
 
@@ -77,8 +79,14 @@ font-size: 30px;
 }
 
 h1 {
+    text-align: center;
     font-size: 50px;
     margin-bottom: 0px;
+}
+
+h2 {
+    text-align: center;
+    text-shadow: -1px -1px #ffffff;
 }
 
 p.intro {
@@ -92,7 +100,7 @@ color: rgb(180, 43, 226);
 [role*="navigation"] {
     list-style-type: none;
     display: inline;
-    text-align: center;
+    text-align: left;
     
 }
 
@@ -105,10 +113,12 @@ p>abbr{
     color: rgb(208, 112, 199);
 }
 
-h1::before{
+
+h1::after{
     content: "🌸";
 }
-h1::after{
+
+h1::before{
     content: "🌸";
 }
 
@@ -148,7 +158,6 @@ a:active{
 
 
 h3:only-of-type{
-    color: ;
     text-shadow: -1px -1px #ffffff;
 }
 
@@ -156,9 +165,7 @@ h2:only-child{
     size: 30px;
 }
 
-{
-    color: rgb(138, 138, 199);
-}
+
 
 [class $="mi"]{
     size: 20px;
@@ -174,10 +181,6 @@ h2:only-child{
     grid-template-areas: "sel arc res";
 }
 
-:empty{
-
-}
-
 
 p:first-of-type::before{
     content: "🌸";
@@ -188,6 +191,48 @@ p:last-of-type::after{
 }
 
 
+.explanation:nth-of-type(1){
+    padding: 2em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);
+    backdrop-filter: blur(5px);
+}
 
+div.explanation+div{
+    padding: 2em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);    
+    backdrop-filter: blur(5px);
+}
+
+.main.supporting{
+    padding: 1.5em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);
+}
+
+
+div.participation~div.benefits{
+    padding: 2em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);
+    backdrop-filter: blur(5px);
+}
+
+
+
+div:empty:nth-last-of-type(1):after{
+    content: "Thank you for reading!";
+    color: rgb(255, 215, 250);
+    font-size: xx-large;
+}
 
 
