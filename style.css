@@ -5,10 +5,14 @@
     background-attachment: fixed; 
 }
 
+[id]{
+    text-align: center;
+}
+
 .page-wrapper{
    
     display: grid;
-    gap: 20px;
+    gap: 5px;
     grid-template: repeat(5,auto)/1fr 1fr;
     grid-template-areas: 'intro intro'
                          'div div'
@@ -40,6 +44,14 @@ div[class="main supporting"]{
 [class~="part"] {
     grid-area: part;
 
+}
+
+[class ^= "ben"]{
+    grid-area: ben;
+}
+
+[class ^="req"]{
+    grid-area: req;
 }
 
 
@@ -81,7 +93,7 @@ color: rgb(180, 43, 226);
     list-style-type: none;
     display: inline;
     text-align: center;
-
+    
 }
 
 div p{
@@ -118,7 +130,7 @@ h3:first-of-type, h2:first-of-type{
     color: #ffecbb;
 }
 
-a, a > abbr{
+a:link, a > abbr{
     color: rgb(255, 215, 250);
 }
 
@@ -155,3 +167,27 @@ h2:only-child{
 [lang|="en"]{
     font-size: 18px;
 }
+
+.page-wrapper .sidebar{
+    display: grid;
+    grid-template: repeat(3, 1fr)/1fr 1fr 1fr;
+    grid-template-areas: "sel arc res";
+}
+
+:empty{
+
+}
+
+
+p:first-of-type::before{
+    content: "🌸";
+}
+
+p:last-of-type::after{
+    content: "🌸";
+}
+
+
+
+
+
