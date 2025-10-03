@@ -70,14 +70,6 @@ section[class^="intro"] {
     backdrop-filter: blur(5px);
 }
 
-div[class="main supporting"]{
-    grid-area: div;
-    display: grid;
-    gap: 2em;
-    grid-template-areas: "ex part"
-                         "ben ben"
-                         "req req";
-}
 
 p.intro {
     font-size: 20px;
@@ -108,6 +100,9 @@ h1::before{
     content: "🌸";
 }
 
+h2:only-child{
+    size: 30px;
+}
 
 h2 {
     text-align: center;
@@ -122,9 +117,24 @@ h3:first-of-type, h2:first-of-type{
     font-style: italic;
 }
 
+h3:only-of-type{
+    text-shadow: -1px -1px #ffffff;
+}   
 
+.sidebar h3{
+    padding-left: 2.2em;
+}
 
+/*Grid areas*/
 
+div[class="main supporting"]{
+    grid-area: div;
+    display: grid;
+    gap: 2em;
+    grid-template-areas: "ex part"
+                         "ben ben"
+                         "req req";
+}
 
 
 [class|="explan"] {
@@ -144,13 +154,13 @@ h3:first-of-type, h2:first-of-type{
     grid-area: req;
 }
 
-
-
-
-
 aside:last-child{
     grid-area: aside;
 }
+
+
+
+
 
 
 
@@ -196,13 +206,8 @@ a:active{
 }
 
 
-h3:only-of-type{
-    text-shadow: -1px -1px #ffffff;
-}
 
-h2:only-child{
-    size: 30px;
-}
+
 
 
 
@@ -267,7 +272,7 @@ div.participation~div.benefits{
 }
 
 
-div:empty:nth-last-of-type(1):after{
+div:empty:nth-last-of-type(1)::after{
     content: "Thank you for reading!";
     color: rgb(255, 215, 250);
     font-size: xx-large;
@@ -299,7 +304,15 @@ footer:nth-child(5)::after{
     content: "🌸";
 }
 
-
+.extra1{
+    background-image: url("blossom2.png");
+    position: absolute;
+    height: 241.5px;
+    width: 315px;
+    background-size: cover;
+    left: 40%;
+    bottom: -100vh;
+}
 
 
 
