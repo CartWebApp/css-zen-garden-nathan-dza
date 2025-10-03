@@ -1,16 +1,21 @@
+/* Things that affect many/all parts of the website */
+
 :root {
+    /*root where these things are applied to all of the website*/
     margin: 5em;
-    background-image: url(fuji.jpg);
+    background-image: url(other-fuji.jpg);
     background-position: center;
     background-attachment: fixed; 
+    background-size: cover;
 }
 
 [id]{
+    /*selects all id's*/
     text-align: left;
 }
 
 .page-wrapper{
-   
+   /**/
     display: grid;
     gap: 5px;
     grid-template: repeat(5,auto)/1fr 1fr;
@@ -19,8 +24,50 @@
                          'aside aside';
 }
 
+* {
+    font-family: "Mono";
+    font-size: 19px;
+    color: white;
+}
+
+div p{
+    font-family: sans-serif;
+}
+
+[role*="navigation"] {
+    list-style-type: none;    
+}
+
+a:focus{
+    background-color: #c1bbff;
+    color: black;
+}
+
+p>abbr{
+    color: rgb(208, 112, 199);
+}
+
+
+
+
+
+
+
+/*Intro*/
 section[class^="intro"] {
     grid-area: intro;
+}
+
+#zen-intro {
+    padding: 2em;
+    text-align: center;
+    margin-top: -75px;
+    margin-bottom: 20px;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);
+    backdrop-filter: blur(5px);
 }
 
 div[class="main supporting"]{
@@ -32,11 +79,53 @@ div[class="main supporting"]{
                          "req req";
 }
 
-* {
-    font-family: "Mono";
-    font-size: 19px;
-    color: white;
+p.intro {
+    font-size: 20px;
 }
+
+.intro::first-line{
+    color: #ffecbb;
+    text-shadow: -1px -1px #ffffff;
+}
+
+
+
+
+
+
+/* Titles (h1-h3)*/
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+
+h1::after{
+    content: "🌸";
+}
+
+h1::before{
+    content: "🌸";
+}
+
+
+h2 {
+    text-align: center;
+    text-shadow: -1px -1px #ffffff;
+}
+
+h2::first-letter, h3::first-letter{
+font-size: 30px;
+}
+
+h3:first-of-type, h2:first-of-type{
+    font-style: italic;
+}
+
+
+
+
+
 
 [class|="explan"] {
     grid-area: ex;
@@ -56,80 +145,30 @@ div[class="main supporting"]{
 }
 
 
-#zen-intro {
-    padding: 2em;
-    text-align: center;
-    margin-top: -75px;
-    margin-bottom: 20px;
-    border-style: double;
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(255, 215, 250);
-    backdrop-filter: blur(5px);
+
+
+
+aside:last-child{
+    grid-area: aside;
 }
 
 
 
-abbr:focus{
-    font-size: 20px;
-}
-
-h2::first-letter, h3::first-letter{
-font-size: 30px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 0px;
-}
-
-h2 {
-    text-align: center;
-    text-shadow: -1px -1px #ffffff;
-}
-
-p.intro {
-    font-size: 20px;
-}
 
 a:visited{
 color: rgb(180, 43, 226);
 }
 
-[role*="navigation"] {
-    list-style-type: none;
-    display: inline;
-    text-align: left;
-    
-}
-
-div p{
-    font-family: sans-serif;
-}
 
 
-p>abbr{
-    color: rgb(208, 112, 199);
-}
 
 
-h1::after{
-    content: "🌸";
-}
 
-h1::before{
-    content: "🌸";
-}
 
-.intro::first-line{
-    color: #ffecbb;
-    text-shadow: -1px -1px #ffffff;
-}
 
-h3:first-of-type, h2:first-of-type{
-    font-style: italic;
-}
+
+
+
 
 ::selection{
     background-color: rgba(255, 158, 249, 0.642);
@@ -176,9 +215,7 @@ h2:only-child{
 }
 
 .page-wrapper .sidebar{
-    display: grid;
-    grid-template: repeat(3, 1fr)/1fr 1fr 1fr;
-    grid-template-areas: "sel arc res";
+    grid-template: 1fr/1fr ;
 }
 
 
@@ -198,6 +235,7 @@ p:last-of-type::after{
     border-width: 3px;
     border-color: rgb(255, 215, 250);
     backdrop-filter: blur(5px);
+    align-content: top;
 }
 
 div.explanation+div{
@@ -207,6 +245,7 @@ div.explanation+div{
     border-width: 3px;
     border-color: rgb(255, 215, 250);    
     backdrop-filter: blur(5px);
+    align-content: top;
 }
 
 .main.supporting{
@@ -228,11 +267,42 @@ div.participation~div.benefits{
 }
 
 
-
 div:empty:nth-last-of-type(1):after{
     content: "Thank you for reading!";
     color: rgb(255, 215, 250);
     font-size: xx-large;
 }
+
+.wrapper:first-child{
+    display: grid;
+    padding: 1.5em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);
+    gap: 20px;
+    grid-template: auto/1fr 1fr 1fr;
+    grid-template-areas: "sel arc res";
+    backdrop-filter: blur(5px);
+}
+
+div.requirements:nth-last-child(2){
+    padding: 2em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(226, 215, 255);
+    backdrop-filter: blur(5px); 
+}
+
+footer:nth-child(5)::after{
+    content: "🌸";
+}
+
+
+
+
+
+
 
 
