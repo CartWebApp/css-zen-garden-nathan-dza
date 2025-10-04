@@ -310,8 +310,8 @@ footer:nth-child(5)::after{
     height: 241.5px;
     width: 315px;
     background-size: cover;
-    left: 40%;
-    bottom: -100vh;
+    left: 45%;
+    margin-top: -280px;
 }
 
 
