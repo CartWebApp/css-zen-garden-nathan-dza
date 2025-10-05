@@ -14,53 +14,170 @@
     text-align: left;
 }
 
-.page-wrapper{
-   /**/
-    display: grid;
-    gap: 5px;
-    grid-template: repeat(5,auto)/1fr 1fr;
-    grid-template-areas: 'intro intro'
-                         'div div'
-                         'aside aside';
+a:visited{
+    /*makes all visited links a certain color*/
+color: rgb(180, 43, 226);
+}
+
+::selection{
+    /*makes highlighted text a certain color*/
+    background-color: rgba(255, 158, 249, 0.642);
+    color: rgb(0, 0, 0);
+}
+
+:not(p){
+    /* everything thats not p gets a specific color*/
+    color: #ffecbb;
+}
+
+a:link, a > abbr{
+    /*<a>'s with a link get a specific color as well as abbr's that are children of a's*/
+    color: rgb(255, 215, 250);
+}
+
+a:hover, a abbr:hover {
+    /*when you hover over <a> tags and <a> tags with an <abbr> tag it turns a specific color */
+    color: rgb(255, 166, 243);
+}
+
+li{
+    /* all li tags get their bullet points removed*/
+    list-style-type: none;
+}
+
+a:active{
+    /* a link youre clicking on gets a background color*/
+    background-color: #ffecbb;
 }
 
 * {
+    /*everything gets set to mono, font size 19 and white*/
     font-family: "Mono";
     font-size: 19px;
     color: white;
 }
 
 div p{
+    /*all p's that are children of a div tag get sans-serif'd*/
     font-family: sans-serif;
 }
 
-[role*="navigation"] {
-    list-style-type: none;    
-}
 
 a:focus{
+    /*every link that is focused on with tab is highlighted with that color*/
     background-color: #c1bbff;
     color: black;
 }
 
 p>abbr{
+    /*every abbr in a p gets this color*/
     color: rgb(208, 112, 199);
 }
 
-
-
-
-
-
-
-/*Intro*/
-section[class^="intro"] {
-    grid-area: intro;
+[class $="mi"]{
+    /*all classes that end in "mi" are 20px*/
+    font-size: 20px;
 }
 
-#zen-intro {
+
+p:first-of-type::before{
+    /*the sakura emoji is before every first p tag of its type*/
+    content: "🌸";
+}
+
+p:last-of-type::after{
+    /*the sakura emoji is after every first p tag of its type*/
+    content: "🌸";
+}
+
+
+.explanation:nth-of-type(1){
+    /*every explanation class thats the first child of its parents has a double border and some blur*/
     padding: 2em;
-    text-align: center;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);
+    backdrop-filter: blur(5px);
+    align-content: top;
+}
+
+div.explanation+div{
+    /*the div that comes after the div with an explanation class gets a double border and blur*/
+    padding: 2em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);    
+    backdrop-filter: blur(5px);
+    align-content: top;
+}
+
+.main.supporting{
+    /*every element with the "main supporting" class gets a double border*/
+    padding: 1.5em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);
+}
+
+
+div.participation~div.benefits{
+    /*every div with a benefits class that comes after a div with a participation class gets a double border with blur*/
+    padding: 2em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);
+    backdrop-filter: blur(5px);
+}
+
+
+div:empty:nth-last-of-type(1)::after{
+    /*uses the last empty div at the bottom to send a message*/
+    content: "Thank you for reading!";
+    color: rgb(255, 215, 250);
+    font-size: 50px;
+}
+
+div.requirements:nth-last-child(2){
+    /*every div with a requirements class that is the 2nd to last child of its parent gets a double border with blur*/
+    padding: 2em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(226, 215, 255);
+    backdrop-filter: blur(5px); 
+}
+
+footer:nth-child(5)::after{
+    /*every footer that's the 5th child of its parent gets a flower after it*/
+    content: "🌸";
+}
+
+.extra1{
+    /*anything with the extra1 class has a picture*/
+    background-image: url("blossom2.png");
+    position: absolute;
+    height: 241.5px;
+    width: 315px;
+    background-size: cover;
+    left: 45%;
+    margin-top: -280px;
+}
+
+
+
+
+
+/*===================================*/
+/*Intro*/
+/*===================================*/
+
+#zen-intro {
+    /*zen intro gets a double pink border with some blur */
+    padding: 2em;
     margin-top: -75px;
     margin-bottom: 20px;
     border-style: double;
@@ -72,10 +189,12 @@ section[class^="intro"] {
 
 
 p.intro {
+    /*all p's with the class intro get a font size of 20px*/
     font-size: 20px;
 }
 
 .intro::first-line{
+    /*the first line of intro gets a color and a shadow*/
     color: #ffecbb;
     text-shadow: -1px -1px #ffffff;
 }
@@ -84,36 +203,41 @@ p.intro {
 
 
 
-
+/*===================================*/
 /* Titles (h1-h3)*/
+/*===================================*/
 h1 {
+    /*h1 gets a text size increase and is aligned to the middle*/
     text-align: center;
     font-size: 50px;
     margin-bottom: 0px;
 }
 
 h1::after{
+    /*after h1 there is a sakura emoji (fits the japan theme)*/
     content: "🌸";
 }
 
 h1::before{
+    /*before the h1 there is another sakura emoji (symmetry)*/
     content: "🌸";
 }
 
-h2:only-child{
-    size: 30px;
-}
 
-h2 {
+
+header {
+    /*header gets a text shadow and alighned to the center*/
     text-align: center;
     text-shadow: -1px -1px #ffffff;
 }
 
 h2::first-letter, h3::first-letter{
-font-size: 30px;
+    /*the first letter of h2 and h3 get bigger*/
+    font-size: 30px;
 }
 
 h3:first-of-type, h2:first-of-type{
+    /*the first h2 and h3's of their type get italic*/
     font-style: italic;
 }
 
@@ -125,9 +249,48 @@ h3:only-of-type{
     padding-left: 2.2em;
 }
 
+
+
 /*Grid areas*/
+.wrapper:only-child{
+    /*every .wapper that's the first child of its parent gets all these things done to it*/
+    display: grid;
+    padding: 1.5em;
+    border-style: double;
+    border-radius: 15px;
+    border-width: 3px;
+    border-color: rgb(255, 215, 250);
+    gap: 20px;
+    grid-template: auto/1fr 1fr 1fr;
+    /*sets the semplate for classes inside .wrapper*/
+    grid-template-areas: "sel arc res";
+    backdrop-filter: blur(5px);
+}
+
+.page-wrapper:first-child{
+   /*.page-wrapper's that are the first children will be displayed as a grid with a 5px gap*/
+   /*inside page wrapper i have set the layout for other classes*/
+    display: grid;
+    gap: 5px;
+    grid-template: repeat(5,auto)/1fr 1fr;
+    grid-template-areas: 'intro intro'
+                         'div div'
+                         'aside aside';
+}
+.page-wrapper .sidebar{
+    /*sets the template for the sidebar thats in page wrapper*/
+    grid-template: 1fr/1fr ;
+}
+section[class^="intro"] {
+    /*this one is the intro box*/
+    grid-area: intro;
+}
+
+
 
 div[class="main supporting"]{
+    /*all divs with the class main and supporting are the div grid area*/
+    /*also sets the template for classes within main supporting*/
     grid-area: div;
     display: grid;
     gap: 2em;
@@ -137,182 +300,33 @@ div[class="main supporting"]{
 }
 
 
+
 [class|="explan"] {
+    /*this is explanation box*/
     grid-area: ex;
 }
 
 [class~="part"] {
+    /*this is the participation box*/
     grid-area: part;
 
 }
 
 [class ^= "ben"]{
+    /*this is the benefits box*/
     grid-area: ben;
 }
 
-[class ^="req"]{
+[class *="req"]{
+    /*this is the requirements box*/
     grid-area: req;
 }
 
 aside:last-child{
+    /*this ones the aside box*/
     grid-area: aside;
 }
 
-
-
-
-
-
-
-
-a:visited{
-color: rgb(180, 43, 226);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-::selection{
-    background-color: rgba(255, 158, 249, 0.642);
-    color: rgb(0, 0, 0);
-}
-
-:not(p){
-    color: #ffecbb;
-}
-
-a:link, a > abbr{
-    color: rgb(255, 215, 250);
-}
-
-a:hover, a abbr:hover {
-    color: rgb(255, 166, 243);
-}
-
-li{
-    list-style-type: none;
-}
-
-a:active{
-    background-color: #ffecbb;
-}
-
-
-
-
-
-
-
-[class $="mi"]{
-    size: 20px;
-}
-
-[lang|="en"]{
-    font-size: 18px;
-}
-
-.page-wrapper .sidebar{
-    grid-template: 1fr/1fr ;
-}
-
-
-p:first-of-type::before{
-    content: "🌸";
-}
-
-p:last-of-type::after{
-    content: "🌸";
-}
-
-
-.explanation:nth-of-type(1){
-    padding: 2em;
-    border-style: double;
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(255, 215, 250);
-    backdrop-filter: blur(5px);
-    align-content: top;
-}
-
-div.explanation+div{
-    padding: 2em;
-    border-style: double;
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(255, 215, 250);    
-    backdrop-filter: blur(5px);
-    align-content: top;
-}
-
-.main.supporting{
-    padding: 1.5em;
-    border-style: double;
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(255, 215, 250);
-}
-
-
-div.participation~div.benefits{
-    padding: 2em;
-    border-style: double;
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(255, 215, 250);
-    backdrop-filter: blur(5px);
-}
-
-
-div:empty:nth-last-of-type(1)::after{
-    content: "Thank you for reading!";
-    color: rgb(255, 215, 250);
-    font-size: xx-large;
-}
-
-.wrapper:first-child{
-    display: grid;
-    padding: 1.5em;
-    border-style: double;
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(255, 215, 250);
-    gap: 20px;
-    grid-template: auto/1fr 1fr 1fr;
-    grid-template-areas: "sel arc res";
-    backdrop-filter: blur(5px);
-}
-
-div.requirements:nth-last-child(2){
-    padding: 2em;
-    border-style: double;
-    border-radius: 15px;
-    border-width: 3px;
-    border-color: rgb(226, 215, 255);
-    backdrop-filter: blur(5px); 
-}
-
-footer:nth-child(5)::after{
-    content: "🌸";
-}
-
-.extra1{
-    background-image: url("blossom2.png");
-    position: absolute;
-    height: 241.5px;
-    width: 315px;
-    background-size: cover;
-    left: 45%;
-    margin-top: -280px;
-}
 
 
 
