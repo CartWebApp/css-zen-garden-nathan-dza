@@ -158,12 +158,12 @@ footer:nth-child(5)::after{
 
 .extra1{
     /*anything with the extra1 class has a picture*/
-    background-image: url("blossom2.png");
+    background-image: url("tree.png");
     position: absolute;
-    height: 241.5px;
-    width: 315px;
+    height: 220px;
+    width: 220px;
     background-size: cover;
-    left: 45%;
+    left: 50%;
     margin-top: -280px;
 }
 
